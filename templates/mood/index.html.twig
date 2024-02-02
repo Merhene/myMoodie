@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Moodies
+{% endblock %}
+
+{% block body %}
+{% for category, messages in app.flashes %}
+    {% for message in messages %}
+    <div class="card-container d-flex flex-column">
+        <div class="alert alert-{{ category }}">
+            {{ message }}
+        </div>
+        </div>
+    {% endfor %}
+{% endfor %}
+	<h1 class="h3 mb-3 font-weight-normal">Your Moodies</h1>
+	<div class="card-container d-flex flex-column">
+		<tbody>
+			{% for mood in moods %}
+				{% if mood.type == 'happy' %}
+					<tr>
+						<a href="{{ path('app_mood_show', {'id': mood.id}) }}" class="btn btn-success">{{ mood.type }}
+						</a>
+					</tr>
+				{% elseif mood.type == 'septic' %}
+					<tr>
+						<a href="{{ path('app_mood_show', {'id': mood.id}) }}" class="btn btn-warning">{{ mood.type }}
+						</a>
+					</tr>
+				{% elseif mood.type == 'angry' %}
+					<tr>
+						<a href="{{ path('app_mood_show', {'id': mood.id}) }}" class="btn btn-danger">{{ mood.type }}
+						</a>
+					</tr>
+				{% else %}
+					<tr>
+						<a href="{{ path('app_mood_show', {'id': mood.id}) }}" class="btn btn-info">{{ mood.type }}
+						</a>
+					</tr>
+				{% endif %}
+				<h6 class="h6 mb-3 font-weight-normal">{{ mood.date ? mood.date|date('d-m-Y H:i') : '' }}</h6>
+			</tr>
+		{% else %}
+			<tr>
+				<td colspan="5">no records found</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</div>
+<div class="card-container d-flex flex-column">
+	<a href="{{ path('app_mood_new') }}" class="btn btn-outline-secondary">Create new</a>
+</div>{% endblock %}

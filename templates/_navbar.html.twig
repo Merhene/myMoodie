@@ -1,0 +1,31 @@
+<nav>
+	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon">
+			<i class="fa-solid fa-bars"></i>
+		</span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav">
+			<li class="active">
+				<a href="{{ path('app_home') }}">Home</a>
+			</li>
+			{% if is_granted('ROLE_USER') %}
+				<li>
+					<a href="{{ path('app_mood_index') }}">Your Moodies</a>
+				</li>
+				<li>
+					<a href="{{ path('app_mood_new') }}">New Mood</a>
+				</li>
+				{# <li>
+					<a href="">Connected Moodies</a>
+				</li> #}
+				<li>
+					<a href="{{ path('app_logout') }}">Logout</a>
+				</li>
+			{% else %}
+				<li>
+					<a href="{{ path('app_register') }}">Sign up</a>
+				</li>
+			{% endif %}
+		</ul>
+	</nav>
