@@ -1,2 +1,165 @@
-//start coding by removing this file and adding yours ;)
-@import "wcs";
+$wild-color: #f3eae8;
+$light: #fcfcfc;
+$dark-color: #171617;
+$secondary: #857770;
+@import "~bootstrap/scss/bootstrap";
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-size: 1.25rem;
+    background-color: $wild-color;
+    color: $light;
+    display: flex;
+    gap: 2rem;
+}
+
+/*--------------- navbar section ---------------*/
+
+nav {
+    position: sticky;
+    top: 0;
+    max-height: 100svh;
+    background-color: $secondary;
+
+}
+
+.navbar-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    gap: 2rem;
+    padding-block: 2rem;
+}
+
+.navbar-nav li {
+    padding: 1rem;
+    margin-left: 2rem;
+    border-radius: 1.15rem 0 0 1.15rem;
+}
+
+.navbar-nav a {
+    color: $light;
+    text-decoration: none;
+}
+
+.navbar-nav li:hover {
+    background-color: $wild-color;
+    border-color: $wild-color;
+    padding: 1rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+    a {
+        color:$secondary;
+    }
+}
+
+/*--------------- Homepage section ---------------*/
+
+.header-logo {
+    display: flex;
+    width: 65%;
+    height: auto;
+    margin: auto;
+    margin-top: 0;
+}
+
+.card-container {
+    margin: auto;
+    margin-top: 5vh;
+    background-color: $wild-color;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3.5px );
+    -webkit-backdrop-filter: blur( 3.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.card-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-decoration: none;
+    color: $dark-color;
+}
+
+.description-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-decoration: none;
+    color: $dark-color;
+    padding: 1.75rem;
+}
+
+.fa-solid.fa-chevron-down:hover {
+    scale: 1.5;
+    transition: all 0.1s ease-in-out;
+}
+
+.btn-test {
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/*--------------- Moodies section ---------------*/
+
+.date-text {
+    color: $secondary;
+}
+
+/*--------------- NewMood section ---------------*/
+
+body.new {
+    gap: 1rem;
+}
+
+.card.form {
+    width: 100%;
+    height: 100svh;
+}
+
+.carousel-item.active {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+textarea#mood1_description {
+    margin: 2rem;
+    width: 75%;
+}
+
+h1, h2, h3, h4, h5, h6, label.required {
+    color: $dark-color;
+}
+.form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*--------------- Register/Login section ---------------*/
+
+@media(min-width: 819px) {
+    .form {
+        margin: auto;
+    }
+}
+
+/*---------------  ---------------*/

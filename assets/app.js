@@ -10,3 +10,22 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
+require('bootstrap');
+
+document.addEventListener('DOMContentLoaded', function() {
+  var buttons = document.querySelectorAll('.carousel-item button');
+
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      buttons.forEach(function(btn) {
+        btn.classList.remove('btn-active');
+      });
+
+      this.classList.add('btn-active');
+
+      var selectElement = document.getElementById('mood1_type');
+      selectElement.value = this.getAttribute('data-value');
+    });
+  });
+});
+

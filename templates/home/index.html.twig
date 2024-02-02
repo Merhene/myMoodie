@@ -1,15 +1,63 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
-
+{% block title %}My Moody
+{% endblock %}
 {% block body %}
-    <div class="pink-stripe">
-        <h1>
-            Let's start coding&nbsp;&#129304;
-        </h1>
-    </div>
-    <div class="white-stripe">
-        <img src="{{ asset('build/images/logo-wild-code-school.svg') }}"
-             alt="">
-    </div>
+	<body class="home">
+		<div class="card-container d-flex flex-column">
+			<img class="header-logo" src="{{ asset('build/images/logotest2.png') }}" alt="My Moody's logo">
+			<div class="card-body">
+				<h1>Welcome, Mooders!</h1>
+			</div>
+			<div class="card-body">
+				<a class="btn-arrow" data-bs-toggle="collapse" href=".description-container" role="button" aria-expanded="false" aria-controls="card-body-text">
+					<i class="fa-solid fa-chevron-down"></i>
+				</a>
+			</div>
+			<div class="collapse description-container">
+				<h3>Welcome to Moody, Your Digital Emotional Companion!</h3>
+				<p>
+					In a world where our emotions can often be overlooked, Moody offers a secure and customizable space to explore and share your feelings on a daily basis. Designed as a modern-day diary, our app allows you to record the emotional events of your life with soothing simplicity.
+				</p>
+				<h3>Key Features:</h3>
+				<ul>
+					<li>
+						<strong>Your Mood, Your Expression:</strong>
+						Choose from a range of expressive emojis - happy, sad, angry, or just empty - to best represent your current state of mind.
+					</li>
+					<li>
+						<strong>Freedom to Express:</strong>
+						Accompany your mood choice with a detailed description of your day or specific moments. This step is entirely optional because sometimes, an emoji says it all.
+					</li>
+					<li>
+						<strong>Privacy by Design :</strong>
+						At Moody, your privacy is our priority. Each entry in your journal can be made public or kept private, as per your choice.
+					</li>
+					<li>
+						<strong>Easy Sharing:</strong>
+						Want to share your thoughts with someone special? Moody makes it a breeze with a unique QR Code or a sharing link.
+					</li>
+				</ul>
+				<p>
+					<strong>Why Moody?</strong><br>
+					We believe that acknowledging and sharing emotions are crucial for personal well-being. Whether you're looking to quietly introspect or connect with a loved one, Moody is here to support you.
+				</p>
+				<p>
+					<em>Simple. Secure. Soothing. </em>
+					That's Moody. Ready to explore your inner world?
+				</p>
+			</div>
+            {% if is_granted('ROLE_USER') %}
+            <a href="{{ path('app_mood_new') }}" class="btn btn-secondary">
+				<h3>Try me !</h3>
+            </a>
+            {% else %}
+            <a href="{{ path('app_register') }}" class="btn btn-secondary">
+				<h3>Try me !</h3>
+            </a>
+            {% endif %}
+		</div>
+	</body>
+</div>
+</body>
 {% endblock %}
