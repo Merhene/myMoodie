@@ -186,7 +186,7 @@ input#registration_form_email, input#registration_form_plainPassword {
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-button.btn.btn-outline-secondary, button.btn.btn-lg.btn-primary {
+button.btn.btn-outline-secondary, button.btn.btn-lg.btn-primary, a.btn.btn-secondary {
     display: block;
     margin: auto;
 }
