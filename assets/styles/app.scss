@@ -1,7 +1,7 @@
-$wild-color: #f3eae8;
+$wild-color: #ece3ff;
 $light: #fcfcfc;
 $dark-color: #171617;
-$secondary: #857770;
+$secondary: #ccc5dc;
 @import "~bootstrap/scss/bootstrap";
 
 * {
@@ -11,6 +11,10 @@ $secondary: #857770;
 }
 
 body {
+    background-image: url('../images/stock-3.png');
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
     height: 100vh;
     margin: 0;
     font-size: 1.25rem;
@@ -59,7 +63,7 @@ nav {
     text-decoration: none;
     transition: all 0.1s ease-in-out;
     a {
-        color:$secondary;
+        color:$dark-color;
     }
 }
 
@@ -106,6 +110,9 @@ nav {
 .fa-solid.fa-chevron-down:hover {
     scale: 1.5;
     transition: all 0.1s ease-in-out;
+}
+.fa-solid.fa-chevron-down {
+    color: $dark-color;
 }
 
 .btn-test {
@@ -162,4 +169,30 @@ h1, h2, h3, h4, h5, h6, label.required {
     }
 }
 
-/*---------------  ---------------*/
+input#registration_form_email, input#registration_form_plainPassword {
+    display: block;
+    margin: auto;
+    width: 80%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button.btn.btn-outline-secondary, button.btn.btn-lg.btn-primary, a.btn.btn-secondary {
+    display: block;
+    margin: auto;
+}
+
+body.register {
+    display: flex;
+    margin: auto;
+}
+

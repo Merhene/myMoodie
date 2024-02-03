@@ -5,9 +5,9 @@
 {% block body %}
 	<body class="home">
 		<div class="card-container d-flex flex-column">
-			<img class="header-logo" src="{{ asset('build/images/logotest2.png') }}" alt="My Moody's logo">
+			<img class="header-logo" src="{{ asset('build/images/mymoodytest.png') }}" alt="My Moody's logo">
 			<div class="card-body">
-				<h1>Welcome, Mooders!</h1>
+				<h1 class="h3 mb-3 font-weight-normal">Welcome, Mooders!</h1>
 			</div>
 			<div class="card-body">
 				<a class="btn-arrow" data-bs-toggle="collapse" href=".description-container" role="button" aria-expanded="false" aria-controls="card-body-text">
@@ -47,6 +47,7 @@
 					That's Moody. Ready to explore your inner world?
 				</p>
 			</div>
+            <br>
             {% if is_granted('ROLE_USER') %}
             <a href="{{ path('app_mood_new') }}" class="btn btn-secondary">
 				<h3>Try me !</h3>
